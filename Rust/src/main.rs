@@ -1,5 +1,5 @@
-use std::println;
-
+use std::{env, println};
+use postgres::{Client, NoTls};
 mod kutya;
 
 fn osszeadas(elso_szam: i32, masodik_szam: i32) -> i32{
@@ -15,6 +15,9 @@ fn main() {
     bloki.set_nev(String::from("Frakk"));
     println!("{}", bloki.get_nev());
 
+    // Postgres
+
+    let mut client = Client::connect("host=IP user=USERNAME", NoTls);
 }
 
 // Unit tesztelés
